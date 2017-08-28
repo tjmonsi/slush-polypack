@@ -1,18 +1,18 @@
 {
-    "name": "slush-slush-polypack",
+    "name": "slush-polypack",
     "description": "A Slush generator to create a Polymer Webpack project",
     "version": "0.1.0",
-    "homepage": "https://github.com/tjmonsi/slush-slush-polypack",
+    "homepage": "https://github.com/tjmonsi/slush-polypack",
     "author": {
         "name": "Toni-Jan Keith Monserrat",
         "email": "tjmonsi@gmail.com"
     },
     "repository": {
         "type": "git",
-        "url": "git://github.com/tjmonsi/slush-slush-polypack.git"
+        "url": "git://github.com/tjmonsi/slush-polypack.git"
     },
     "bugs": {
-        "url": "https://github.com/tjmonsi/slush-slush-polypack/issues"
+        "url": "https://github.com/tjmonsi/slush-polypack/issues"
     },
     "license": "MIT",
     "main": "slushfile.js",

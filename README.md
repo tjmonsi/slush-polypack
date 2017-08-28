@@ -1,14 +1,14 @@
-# Slush Slush-polypack [![Build Status](https://secure.travis-ci.org/tjmonsi/slush-slush-polypack.png?branch=master)](https://travis-ci.org/tjmonsi/slush-slush-polypack) [![NPM version](https://badge-me.herokuapp.com/api/npm/slush-slush-polypack.png)](http://badges.enytc.com/for/npm/slush-slush-polypack)
+# Slush Slush-polypack [![Build Status](https://secure.travis-ci.org/tjmonsi/slush-polypack.png?branch=master)](https://travis-ci.org/tjmonsi/slush-polypack) [![NPM version](https://badge-me.herokuapp.com/api/npm/slush-polypack.png)](http://badges.enytc.com/for/npm/slush-polypack)
 
 > A Slush generator to create a Polymer Webpack project
 
 
 ## Getting Started
 
-Install `slush-slush-polypack` globally:
+Install `slush-polypack` globally:
 
 ```bash
-$ npm install -g slush-slush-polypack
+$ npm install -g slush-polypack
 ```
 
 ### Usage
@@ -16,13 +16,13 @@ $ npm install -g slush-slush-polypack
 Create a new folder for your project:
 
 ```bash
-$ mkdir my-slush-slush-polypack
+$ mkdir my-slush-polypack
 ```
 
 Run the generator from within the new folder:
 
 ```bash
-$ cd my-slush-slush-polypack && slush slush-polypack
+$ cd my-slush-polypack && slush slush-polypack
 ```
 
 ## Getting To Know Slush
@@ -35,12 +35,12 @@ To find out more about Slush, check out the [documentation](https://github.com/s
 
 ## Contributing
 
-See the [CONTRIBUTING Guidelines](https://github.com/tjmonsi/slush-slush-polypack/blob/master/CONTRIBUTING.md)
+See the [CONTRIBUTING Guidelines](https://github.com/tjmonsi/slush-polypack/blob/master/CONTRIBUTING.md)
 
 ## Support
-If you have any problem or suggestion please open an issue [here](https://github.com/tjmonsi/slush-slush-polypack/issues).
+If you have any problem or suggestion please open an issue [here](https://github.com/tjmonsi/slush-polypack/issues).
 
-## License 
+## License
 
 The MIT License
 
