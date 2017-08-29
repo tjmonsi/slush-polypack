@@ -25,6 +25,10 @@ Run the generator from within the new folder:
 $ cd my-slush-polypack && slush slush-polypack
 ```
 
+## Documentation
+
+You can check all the tasks and how to use them [here](./README.md)
+
 ## Getting To Know Slush
 
 Slush is a tool that uses Gulp for project scaffolding.

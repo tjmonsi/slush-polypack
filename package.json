@@ -1,40 +1,49 @@
 {
-    "name": "slush-polypack",
-    "description": "A Slush generator to create a Polymer Webpack project",
-    "version": "0.1.0",
-    "homepage": "https://github.com/tjmonsi/slush-polypack",
-    "author": {
-        "name": "Toni-Jan Keith Monserrat",
-        "email": "tjmonsi@gmail.com"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git://github.com/tjmonsi/slush-polypack.git"
-    },
-    "bugs": {
-        "url": "https://github.com/tjmonsi/slush-polypack/issues"
-    },
-    "license": "MIT",
-    "main": "slushfile.js",
-    "engines": {
-        "node": ">= 0.10.26",
-        "npm": ">=1.4.3"
-    },
-    "scripts": {
-        "test": "echo \"No tests\""
-    },
-    "dependencies": {
-        "slush": ">=1.0.0",
-        "gulp": "^3.6.2",
-        "gulp-template": "^0.1.1",
-        "gulp-install": "^0.1.4",
-        "gulp-conflict": "^0.1.1",
-        "gulp-rename": "^1.2.0",
-        "underscore.string": "^2.3.3",
-        "inquirer": "^0.8.0",
-        "iniparser": "^1.0.5"
-    },
-    "keywords": [
-        "slushgenerator"
-    ]
+  "name": "slush-polypack",
+  "description": "A Slush generator to create a Polymer Webpack project",
+  "version": "0.1.0",
+  "homepage": "https://github.com/tjmonsi/slush-polypack",
+  "author": {
+    "name": "Toni-Jan Keith Monserrat",
+    "email": "tjmonsi@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/tjmonsi/slush-polypack.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tjmonsi/slush-polypack/issues"
+  },
+  "license": "MIT",
+  "main": "slushfile.js",
+  "engines": {
+    "node": ">= 0.10.26",
+    "npm": ">=1.4.3"
+  },
+  "scripts": {
+    "test": "echo \"No tests\""
+  },
+  "dependencies": {
+    "camelcase": "^4.1.0",
+    "gulp": "^3.6.2",
+    "gulp-conflict": "^0.1.1",
+    "gulp-rename": "^1.2.0",
+    "gulp-template": "^0.1.1",
+    "iniparser": "^1.0.5",
+    "inquirer": "^0.8.0",
+    "lodash": "^4.17.4",
+    "run-sequence": "^2.1.0",
+    "slugify": "^1.2.1",
+    "slush": ">=1.0.0",
+    "uppercamelcase": "^3.0.0"
+  },
+  "keywords": [
+    "slushgenerator"
+  ],
+  "devDependencies": {
+    "babel-eslint": "^7.2.3",
+    "eslint-plugin-html": "^3.2.0",
+    "gulp-markdox": "^0.1.2",
+    "standard": "^10.0.3"
+  }
 }
