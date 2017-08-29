@@ -65,6 +65,7 @@ gulp.task('create-app', (done) => {
       'create-readme',
       'create-contributing',
       'create-firebaserc',
+      'create-dev-config',
       done
     )
   })

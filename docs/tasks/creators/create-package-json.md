@@ -4,7 +4,7 @@
 
 # Slush Task Create package.json
 
-Creates the package.json file using the _package.json template. Will not write without running the [create-app](./create-app.md) task.
+Creates the `package.json` file using the `_package.json` template. Will not write without running the [create-app](./create-app.md) task.
 
 ## Usage
 

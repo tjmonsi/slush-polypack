@@ -16,7 +16,7 @@ const dest = './src/config'
  * ```
  */
 
-gulp.task('create-firebaserc', (done) => {
+gulp.task('create-dev-config', (done) => {
   if (data.answers) {
     writer(gulp.src(__dirname + '/../../templates/src/config/_dev.json'), data.answers, dest, done)
   } else {

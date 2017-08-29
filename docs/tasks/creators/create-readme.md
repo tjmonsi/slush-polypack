@@ -4,7 +4,7 @@
 
 # Slush Task Create Readme
 
-Creates the README file using the _README.md template. Will not write without running the [create-app](./create-app.md) task.
+Creates the `README.md` file using the `_README.md` template. Will not write without running the [create-app](./create-app.md) task.
 
 ## Usage
 
