@@ -30,12 +30,12 @@ gulp.task('create-docs', () => {
 })
 
 gulp.task('create-table-of-contents', (done) => {
-  const folders = fs.readdirSync(__dirname + '/docs')
+  const folders = fs.readdirSync(__dirname + '/docs/tasks')
 
   var string = '# Table of Contents\n\n'
 
   folders.forEach((folder) => {
-    const files = fs.readdirSync(__dirname + '/docs/' + folder)
+    const files = fs.readdirSync(__dirname + '/docs/tasks/' + folder)
 
     string += `## ${folder}\n\n`
 
