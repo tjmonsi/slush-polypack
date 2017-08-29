@@ -1,4 +1,4 @@
-# Slush Slush-polypack [![Build Status](https://secure.travis-ci.org/tjmonsi/slush-polypack.png?branch=master)](https://travis-ci.org/tjmonsi/slush-polypack) [![NPM version](https://badge-me.herokuapp.com/api/npm/slush-polypack.png)](http://badges.enytc.com/for/npm/slush-polypack)
+# Slush Polypack [![Build Status](https://secure.travis-ci.org/tjmonsi/slush-polypack.png?branch=master)](https://travis-ci.org/tjmonsi/slush-polypack) [![NPM version](https://badge-me.herokuapp.com/api/npm/slush-polypack.png)](http://badges.enytc.com/for/npm/slush-polypack)
 
 > A Slush generator to create a Polymer Webpack project
 
