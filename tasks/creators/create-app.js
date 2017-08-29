@@ -18,7 +18,7 @@ const runSequence = require('run-sequence')
  * - .firebaserc
  * - src/config/dev.config.js
  *
- * It runs the following tasks
+ * It runs the following tasks:
  * - [create-package-json](../creators/create-package-json.md)
  * - [create-readme](../creators/create-readme.md)
  * - [create-contributing](../creators/create-contributing.md)
