@@ -40,7 +40,7 @@ gulp.task('create-table-of-contents', (done) => {
     string += `## ${folder}\n\n`
 
     files.forEach((file) => {
-      string += `- [${file}](./${file}.md)\n`
+      string += `- [${file}](./${folder}/${file}.md)\n`
     })
 
     string += `\n`

@@ -2,8 +2,8 @@
 
 ## tasks
 
-- [creators](./creators.md)
-- [installers](./installers.md)
-- [removers](./removers.md)
-- [setters](./setters.md)
-- [updates](./updates.md)
+- [creators](./tasks/creators.md)
+- [installers](./tasks/installers.md)
+- [removers](./tasks/removers.md)
+- [setters](./tasks/setters.md)
+- [updates](./tasks/updates.md)

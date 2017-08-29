@@ -27,7 +27,7 @@ $ cd my-slush-polypack && slush slush-polypack
 
 ## Documentation
 
-You can check all the tasks and how to use them [here](./README.md)
+You can check all the tasks and how to use them [here](./docs/README.md)
 
 ## Getting To Know Slush
 
