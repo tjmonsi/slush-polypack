@@ -4,14 +4,17 @@
 
 - [create-app.md](./tasks/creators/create-app.md)
 - [create-babelrc.md](./tasks/creators/create-babelrc.md)
+- [create-contributing.md](./tasks/creators/create-contributing.md)
 - [create-database-rules-json.md](./tasks/creators/create-database-rules-json.md)
 - [create-dev-config.md](./tasks/creators/create-dev-config.md)
 - [create-firebase-json.md](./tasks/creators/create-firebase-json.md)
 - [create-firebaserc.md](./tasks/creators/create-firebaserc.md)
 - [create-gitignore.md](./tasks/creators/create-gitignore.md)
 - [create-module.md](./tasks/creators/create-module.md)
+- [create-package-json.md](./tasks/creators/create-package-json.md)
 - [create-page.md](./tasks/creators/create-page.md)
 - [create-polypackrc.md](./tasks/creators/create-polypackrc.md)
+- [create-readme.md](./tasks/creators/create-readme.md)
 - [create-route.md](./tasks/creators/create-route.md)
 - [create-theme.md](./tasks/creators/create-theme.md)
 

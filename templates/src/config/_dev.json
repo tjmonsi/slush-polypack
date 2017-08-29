@@ -1,0 +1,126 @@
+{
+  "app": {
+    "title": "<%= appName %>",
+    "shortTitle": "<%= appShortName %>",
+    "description": "<%= appDescription %>",
+    "twitter": "<%= appTwitterHandle %>",
+    "image": "<%= appImage %>"
+  },
+  "build": {
+    "name": "dev",
+    "baseHref": "<%= appBaseHref || '/' %>",
+    "analytics": "<%= appGoogleAnalytics %>",
+    "firebaseVersion": "<%= appFirebaseVersion || '4.2.0' %>",
+    "database": "dev",
+    "sentryUrl": "<%= appSentryUrl %>",
+    "firebaseConfig": []
+  },
+  "theme": {
+    "src": "modules/example-module"
+  },
+  "fragments": {
+    "devfest-landing-page": "modules/example-module/pages/example-landing-page.html",
+    "devfest-not-found-page": "modules/example-module/pages/example-not-found-page.html",
+    "devfest-not-authorized-page": "modules/example-module/pages/example-not-authorized-page.html",
+    "devfest-authorized-page": "modules/example-module/pages/example-authorized-page.html",
+    "example-header": "modules/example-module/components/example-header.html",
+    "example-drawer": "modules/example-module/components/example-drawer.html"
+  },
+  "routing": {
+    "/": "example-landing-page",
+    "/index.html": "example-landing-page",
+    "/auth": {
+      "name": "devfest-authorized-page",
+      "auth": "exampleAuthentication"
+    }
+  },
+  "httpCodes": {
+    "not-found": "example-not-found-page",
+    "not-authorized": "example-not-authorized-page"
+  },
+  "partials": {
+    "header": "example-header",
+    "drawer": "example-drawer"
+  },
+  "serviceWorker": {
+    "globIgnores": [],
+    "runtimeCaching": [],
+    "globPatterns": []
+  },
+  "hosting": {
+    "headers": [
+      {
+        "source" : "**/*.@(jpg|jpeg|gif|png)",
+        "headers" : [
+          {
+            "key" : "Cache-Control",
+            "value" : "max-age=7200"
+          }
+        ]
+      },
+      {
+        "source" : "404.html",
+        "headers" : [
+          {
+            "key" : "Cache-Control",
+            "value" : "max-age=300"
+          }
+        ]
+      },
+      {
+        "source": "service-worker.js",
+        "headers" : [
+          {
+            "key": "Cache-Control",
+            "value": "no-cache, no-store, must-revalidate"
+          }
+        ]
+      },
+      {
+        "source": "service-worker-core/*.js",
+        "headers" : [
+          {
+            "key": "Cache-Control",
+            "value": "no-cache, no-store, must-revalidate"
+          }
+        ]
+      },
+      {
+        "source": "service-worker-src/*js",
+        "headers" : [
+          {
+            "key": "Cache-Control",
+            "value": "no-cache, no-store, must-revalidate"
+          }
+        ]
+      },
+      {
+        "source": "sw.js",
+        "headers" : [
+          {
+            "key": "Cache-Control",
+            "value": "no-cache, no-store, must-revalidate"
+          }
+        ]
+      },
+      {
+        "source": "workbox-routing.js",
+        "headers" : [
+          {
+            "key": "Cache-Control",
+            "value": "no-cache, no-store, must-revalidate"
+          }
+        ]
+      },
+      {
+        "source": "workbox-sw.*.js",
+        "headers" : [
+          {
+            "key": "Cache-Control",
+            "value": "no-cache, no-store, must-revalidate"
+          }
+        ]
+      }
+    ]
+  }
+}

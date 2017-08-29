@@ -1,4 +1,4 @@
-# Contributing to slush-polypack
+# Contributing to <%= appRepo.split('/')[1] %>
 
 Please take a moment to review this document in order to make the contribution
 process easy and effective for everyone involved.
@@ -93,11 +93,11 @@ project:
 
    ```bash
    # Clone your fork of the repo into the current directory
-   git clone https://github.com/<your-username>/slush-polypack
+   git clone https://github.com/<your-username>/<%= appRepo.split('/')[1] %>
    # Navigate to the newly cloned directory
-   cd slush-polypack
+   cd <%= appRepo.split('/')[1] %>
    # Assign the original repo to a remote called "upstream"
-   git remote add upstream https://github.com/tjmonsi/slush-polypack
+   git remote add upstream https://github.com/tjmonsi/<%= appRepo.split('/')[1] %>
    ```
 
 2. If you cloned a while ago, get the latest changes from upstream:
