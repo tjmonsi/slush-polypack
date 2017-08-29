@@ -9,8 +9,11 @@ Creates the `.firebaserc` file using the `_.firebaserc` template. Will not write
 ## Usage
 
 ```bash
-$ npm slush polyapp:create-contributing
+$ npm slush polyapp:create-firebaserc
 ```
+
+## File:
+[/tasks/creators/create-firebaserc.js](../../../tasks/creators/create-firebaserc.js)
 
 <!-- End tasks/creators/create-firebaserc.js -->
 

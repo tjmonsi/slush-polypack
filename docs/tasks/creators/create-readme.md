@@ -12,5 +12,8 @@ Creates the `README.md` file using the `_README.md` template. Will not write wit
 $ npm slush polyapp:create-readme
 ```
 
+## File:
+[/tasks/creators/create-readme.js](../../../tasks/creators/create-readme.js)
+
 <!-- End tasks/creators/create-readme.js -->
 

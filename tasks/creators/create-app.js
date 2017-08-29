@@ -30,6 +30,10 @@ const runSequence = require('run-sequence')
  * ```bash
  * $ npm slush polyapp:create-app
  * ```
+ *
+ * ## File:
+ * [/tasks/creators/create-app.js](../../../tasks/creators/create-app.js)
+ *
  */
 gulp.task('create-app', (done) => {
   inquirer.prompt(questions.start, (answers) => {

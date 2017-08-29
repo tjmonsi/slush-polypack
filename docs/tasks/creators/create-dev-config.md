@@ -12,5 +12,8 @@ Creates the `dev.json` file in the `src/config` folder using the `_dev.json` tem
 $ npm slush polyapp:create-contributing
 ```
 
+## File:
+[/tasks/creators/create-dev-config.js](../../../tasks/creators/create-dev-config.js)
+
 <!-- End tasks/creators/create-dev-config.js -->
 

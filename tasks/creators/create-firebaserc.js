@@ -12,8 +12,12 @@ const dest = './'
  * ## Usage
  *
  * ```bash
- * $ npm slush polyapp:create-contributing
+ * $ npm slush polyapp:create-firebaserc
  * ```
+ *
+ * ## File:
+ * [/tasks/creators/create-firebaserc.js](../../../tasks/creators/create-firebaserc.js)
+ *
  */
 
 gulp.task('create-firebaserc', (done) => {

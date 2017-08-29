@@ -25,5 +25,8 @@ It runs the following tasks:
 $ npm slush polyapp:create-app
 ```
 
+## File:
+[/tasks/creators/create-app.js](../../../tasks/creators/create-app.js)
+
 <!-- End tasks/creators/create-app.js -->
 

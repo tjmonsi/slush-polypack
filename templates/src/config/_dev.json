@@ -19,18 +19,19 @@
     "src": "modules/example-module"
   },
   "fragments": {
-    "devfest-landing-page": "modules/example-module/pages/example-landing-page.html",
-    "devfest-not-found-page": "modules/example-module/pages/example-not-found-page.html",
-    "devfest-not-authorized-page": "modules/example-module/pages/example-not-authorized-page.html",
-    "devfest-authorized-page": "modules/example-module/pages/example-authorized-page.html",
-    "example-header": "modules/example-module/components/example-header.html",
-    "example-drawer": "modules/example-module/components/example-drawer.html"
+    "example-landing-page": "modules/example-module/pages/example-landing-page/example-landing-page.js",
+    "example-not-found-page": "modules/example-module/pages/example-not-found-page/example-not-found-page.js",
+    "example-not-authorized-page": "modules/example-module/pages/example-not-authorized-page/example-not-authorized-page.js",
+    "example-authorized-page": "modules/example-module/pages/example-authorized-page/example-authorized-page.js",
+    "example-style-guide-page": "modules/example-module/pages/example-style-guide-page/example-style-guide-page.js",
+    "example-header": "modules/example-module/components/example-header/example-header.js",
+    "example-drawer": "modules/example-module/components/example-drawer/example-drawer.js"
   },
   "routing": {
     "/": "example-landing-page",
-    "/index.html": "example-landing-page",
+    "style-guide": "example-style-guide-page",
     "/auth": {
-      "name": "devfest-authorized-page",
+      "name": "example-authorized-page",
       "auth": "exampleAuthentication"
     }
   },

@@ -55,5 +55,6 @@
 
 ## updates
 
+- [update-build-utils](./tasks/updates/update-build-utils.md)
 - [update-core](./tasks/updates/update-core.md)
 - [update-src](./tasks/updates/update-src.md)

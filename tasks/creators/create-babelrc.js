@@ -12,6 +12,10 @@ const dest = './'
  * ```bash
  * $ npm slush polyapp:create-contributing
  * ```
+ *
+ * ## File:
+ * [/tasks/creators/create-babelrc.js](../../../tasks/creators/create-babelrc.js)
+ *
  */
 
 gulp.task('create-babelrc', (done) => {

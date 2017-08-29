@@ -14,6 +14,10 @@ const dest = './src/config'
  * ```bash
  * $ npm slush polyapp:create-contributing
  * ```
+ *
+ * ## File:
+ * [/tasks/creators/create-dev-config.js](../../../tasks/creators/create-dev-config.js)
+ *
  */
 
 gulp.task('create-dev-config', (done) => {

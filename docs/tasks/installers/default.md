@@ -22,5 +22,8 @@ Note: Be careful when using it on an existing project.
 $ npm slush polyapp
 ```
 
+## File:
+[/tasks/installers/default.js](../../../tasks/installers/default.js)
+
 <!-- End tasks/installers/default.js -->
 

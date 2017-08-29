@@ -14,6 +14,10 @@ const dest = './'
  * ```bash
  * $ npm slush polyapp:create-contributing
  * ```
+ *
+ * ## File:
+ * [/tasks/creators/create-contributing.js](../../../tasks/creators/create-contributing.js)
+ *
  */
 
 gulp.task('create-contributing', (done) => {

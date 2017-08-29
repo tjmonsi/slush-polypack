@@ -12,8 +12,12 @@ const dest = './'
  * ## Usage
  *
  * ```bash
- * $ npm slush polyapp:create-contributing
+ * $ npm slush polyapp:create-package-json
  * ```
+ *
+ * ## File:
+ * [/tasks/creators/create-package-json.js](../../../tasks/creators/create-package-json.js)
+ *
  */
 
 gulp.task('create-package-json', (done) => {

@@ -21,6 +21,10 @@ const runSequence = require('run-sequence')
  * ```bash
  * $ npm slush polyapp
  * ```
+ *
+ * ## File:
+ * [/tasks/installers/default.js](../../../tasks/installers/default.js)
+ *
  */
 gulp.task('default', (done) => {
   return runSequence(

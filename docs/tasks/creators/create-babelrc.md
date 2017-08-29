@@ -12,5 +12,8 @@ Creates/Overwrites the `.babelrc` file.
 $ npm slush polyapp:create-contributing
 ```
 
+## File:
+[/tasks/creators/create-babelrc.js](../../../tasks/creators/create-babelrc.js)
+
 <!-- End tasks/creators/create-babelrc.js -->
 

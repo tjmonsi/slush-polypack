@@ -14,6 +14,10 @@ const dest = './'
  * ```bash
  * $ npm slush polyapp:create-readme
  * ```
+ *
+ * ## File:
+ * [/tasks/creators/create-readme.js](../../../tasks/creators/create-readme.js)
+ *
  */
 
 gulp.task('create-readme', (done) => {

@@ -9,8 +9,11 @@ Creates the `package.json` file using the `_package.json` template. Will not wri
 ## Usage
 
 ```bash
-$ npm slush polyapp:create-contributing
+$ npm slush polyapp:create-package-json
 ```
+
+## File:
+[/tasks/creators/create-package-json.js](../../../tasks/creators/create-package-json.js)
 
 <!-- End tasks/creators/create-package-json.js -->
 

@@ -12,5 +12,8 @@ Creates the `CONTRIBUTING.md` file using the `_CONTRIBUTING.md` template. Will n
 $ npm slush polyapp:create-contributing
 ```
 
+## File:
+[/tasks/creators/create-contributing.js](../../../tasks/creators/create-contributing.js)
+
 <!-- End tasks/creators/create-contributing.js -->
 
