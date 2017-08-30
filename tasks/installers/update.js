@@ -26,7 +26,6 @@ gulp.task('update', (done) => {
     'update-core',
     'update-src',
     'update-gulp',
-    'update-images',
     'update-functions',
     done
   )
