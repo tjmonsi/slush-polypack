@@ -2,10 +2,9 @@ const gulp = require('gulp')
 const runSequence = require('run-sequence')
 
 /**
- * # Slush Task Default
+ * # Gulp Task Default
  *
- * Default. Creates the primary structure of your project.
- * Use it on an empty directory to start your project.
+ * Default. Runs/Builds the program.
  * Runs the following tasks:
  * - [create-app](../creators/create-app.md)
  * - [create-babelrc](../creators/create-babelrc.md)
@@ -14,7 +13,6 @@ const runSequence = require('run-sequence')
  * - [create-polypackrc](../creators/create-polypackrc.md)
  * - [update](./update.md)
  *
- * Note: Be careful when using it on an existing project.
  *
  * ## Usage
  *
@@ -28,19 +26,13 @@ const runSequence = require('run-sequence')
  */
 gulp.task('default', (done) => {
   return runSequence(
-    'create-app',
-    'create-gulpfile',
-    'create-babelrc',
-    'create-database-rules-json',
-    'create-firebase-json',
-    'create-firebaserc',
-    'create-gitignore',
-    'create-polypackrc',
     'create-routing',
     'create-partials',
     'create-http-codes',
-    'update',
-    'install',
+    'create-firebase-json',
+    'watch-build',
+    'run-webpack',
+    'run-server',
     done
   )
 })

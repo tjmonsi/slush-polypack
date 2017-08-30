@@ -22,7 +22,7 @@ const dest = './'
 
 gulp.task('create-contributing', (done) => {
   if (data.answers) {
-    writer(gulp.src(__dirname + '/../../templates/_CONTRIBUTING.md'), data.answers, dest, done)
+    writer(gulp.src(__dirname + '/../../templates/dynamic-templates/_CONTRIBUTING.md'), data.answers, dest, done)
   } else {
     gutil.log(gutil.colors.red('Error: Cannot write a CONTRIBUTING.md without running the create-app task. Please run: slush polypack:create-app'))
     done()

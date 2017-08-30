@@ -10,17 +10,21 @@
 - [create-firebase-json](./tasks/creators/create-firebase-json.md)
 - [create-firebaserc](./tasks/creators/create-firebaserc.md)
 - [create-gitignore](./tasks/creators/create-gitignore.md)
+- [create-http-codes](./tasks/creators/create-http-codes.md)
 - [create-module](./tasks/creators/create-module.md)
 - [create-package-json](./tasks/creators/create-package-json.md)
 - [create-page](./tasks/creators/create-page.md)
+- [create-partials](./tasks/creators/create-partials.md)
 - [create-polypackrc](./tasks/creators/create-polypackrc.md)
 - [create-readme](./tasks/creators/create-readme.md)
 - [create-route](./tasks/creators/create-route.md)
+- [create-routing](./tasks/creators/create-routing.md)
 - [create-theme](./tasks/creators/create-theme.md)
 
 ## installers
 
 - [default](./tasks/installers/default.md)
+- [install](./tasks/installers/install.md)
 - [update](./tasks/installers/update.md)
 
 ## removers
@@ -50,6 +54,11 @@
 - [set-not-found](./tasks/setters/set-not-found.md)
 - [set-route](./tasks/setters/set-route.md)
 - [set-sentry](./tasks/setters/set-sentry.md)
+- [set-theme-author](./tasks/setters/set-theme-author.md)
+- [set-theme-background-color](./tasks/setters/set-theme-background-color.md)
+- [set-theme-color](./tasks/setters/set-theme-color.md)
+- [set-theme-name](./tasks/setters/set-theme-name.md)
+- [set-theme-start-url](./tasks/setters/set-theme-start-url.md)
 - [set-theme](./tasks/setters/set-theme.md)
 - [set-unauthorized](./tasks/setters/set-unauthorized.md)
 
@@ -57,4 +66,5 @@
 
 - [update-build-utils](./tasks/updates/update-build-utils.md)
 - [update-core](./tasks/updates/update-core.md)
+- [update-functions](./tasks/updates/update-functions.md)
 - [update-src](./tasks/updates/update-src.md)

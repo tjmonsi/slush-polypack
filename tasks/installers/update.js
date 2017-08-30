@@ -21,10 +21,12 @@ const runSequence = require('run-sequence')
  * [/tasks/installers/update.js](../../../tasks/installers/update.js)
  *
  */
-gulp.task('default', (done) => {
+gulp.task('update', (done) => {
   return runSequence(
     'update-core',
     'update-src',
+    'update-build-utils',
+    'update-functions',
     done
   )
 })

@@ -22,7 +22,7 @@ const dest = './'
 
 gulp.task('create-package-json', (done) => {
   if (data.answers) {
-    writer(gulp.src(__dirname + '/../../templates/_package.json'), data.answers, dest, done)
+    writer(gulp.src(__dirname + '/../../templates/dynamic-templates/_package.json'), data.answers, dest, done)
   } else {
     gutil.log(gutil.colors.red('Error: Cannot write a package.json without running the create-app task. Please run: slush polypack:create-app'))
     done()

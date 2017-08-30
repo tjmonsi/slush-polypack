@@ -20,6 +20,7 @@ const runSequence = require('run-sequence')
  *
  * It runs the following tasks:
  * - [create-package-json](../creators/create-package-json.md)
+ * - [create-bower.json](../creators/create-bower.md)
  * - [create-readme](../creators/create-readme.md)
  * - [create-contributing](../creators/create-contributing.md)
  * - [create-firebaserc](../creators/create-firebaserc.md)
@@ -66,6 +67,7 @@ gulp.task('create-app', (done) => {
 
     runSequence(
       'create-package-json',
+      'create-bower',
       'create-readme',
       'create-contributing',
       'create-firebaserc',

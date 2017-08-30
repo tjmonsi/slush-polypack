@@ -22,7 +22,7 @@ const dest = './src/config'
 
 gulp.task('create-dev-config', (done) => {
   if (data.answers) {
-    writer(gulp.src(__dirname + '/../../templates/src/config/_dev.json'), data.answers, dest, done)
+    writer(gulp.src(__dirname + '/../../templates/dynamic-templates/_dev.json'), data.answers, dest, done)
   } else {
     gutil.log(gutil.colors.red('Error: Cannot write a dev.json without running the create-app task. Please run: slush polypack:create-app'))
     done()

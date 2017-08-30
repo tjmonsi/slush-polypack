@@ -22,7 +22,7 @@ const dest = './'
 
 gulp.task('create-firebaserc', (done) => {
   if (data.answers) {
-    writer(gulp.src(__dirname + '/../../templates/_.firebaserc'), data.answers, dest, done)
+    writer(gulp.src(__dirname + '/../../templates/dynamic-templates/_.firebaserc'), data.answers, dest, done)
   } else {
     gutil.log(gutil.colors.red('Error: Cannot write a .firebaserc without running the create-app task. Please run: slush polypack:create-app'))
     done()
