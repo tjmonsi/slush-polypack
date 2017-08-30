@@ -15,6 +15,7 @@
     "url": "<%= appRepoFullUrl %>/issues"
   },
   <% } %>
+  "license": "<%= appLicense %>",
   "scripts": {
     "test": "xvfb-run wct --skip-plugin sauce --skip-plugin chrome",
     "test-with-screen": "export DISPLAY=:0 && wct --skip-plugin sauce --skip-plugin chrome",

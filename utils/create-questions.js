@@ -84,6 +84,11 @@ module.exports = {
       ]
     },
     {
+      name: 'appLicense',
+      message: 'What license you want to use for this project?',
+      default: 'MIT'
+    },
+    {
       name: 'authorName',
       message: 'What is the author\'s name?',
       default: defaults.authorName

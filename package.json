@@ -27,6 +27,7 @@
     "camelcase": "^4.1.0",
     "gulp": "^3.6.2",
     "gulp-conflict": "^0.1.1",
+    "gulp-install": "^1.1.0",
     "gulp-rename": "^1.2.0",
     "gulp-template": "^0.1.1",
     "gulp-util": "^3.0.8",

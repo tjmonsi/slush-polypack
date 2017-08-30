@@ -300,6 +300,10 @@ d@1, d@~0.1.1:
   dependencies:
     es5-ext "~0.10.2"
 
+dargs@^5.1.0:
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/dargs/-/dargs-5.1.0.tgz#ec7ea50c78564cd36c9d5ec18f66329fade27829"
+
 dateformat@^1.0.7-1.2.3, dateformat@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/dateformat/-/dateformat-2.0.0.tgz#2743e3abb5c3fc2462e527dca445e04e9f4dee17"
@@ -947,6 +951,17 @@ gulp-conflict@^0.1.1:
     inquirer "^0.5.1"
     through2 "^0.4.1"
 
+gulp-install@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/gulp-install/-/gulp-install-1.1.0.tgz#9386b46cb4669b47257b6adf4e3ea2e83c928a1a"
+  dependencies:
+    dargs "^5.1.0"
+    gulp-util "^3.0.7"
+    lodash.groupby "^4.6.0"
+    p-queue "^1.0.0"
+    through2 "^2.0.3"
+    which "^1.2.14"
+
 gulp-markdox@^0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/gulp-markdox/-/gulp-markdox-0.1.2.tgz#09e94776cd689c40d94ab6379d1fd5669bc18502"
@@ -969,7 +984,7 @@ gulp-template@^0.1.1:
     lodash "^2.4.1"
     through2 "^0.5.1"
 
-gulp-util@^2.2.0, gulp-util@^2.2.14, gulp-util@^3.0.0, gulp-util@^3.0.8, gulp-util@~3.0.7:
+gulp-util@^2.2.0, gulp-util@^2.2.14, gulp-util@^3.0.0, gulp-util@^3.0.7, gulp-util@^3.0.8, gulp-util@~3.0.7:
   version "3.0.8"
   resolved "https://registry.yarnpkg.com/gulp-util/-/gulp-util-3.0.8.tgz#0054e1e744502e27c04c187c3ecc505dd54bbb4f"
   dependencies:
@@ -1470,6 +1485,10 @@ lodash.escape@^3.0.0, lodash.escape@~2.4.1:
   dependencies:
     lodash._root "^3.0.0"
 
+lodash.groupby@^4.6.0:
+  version "4.6.0"
+  resolved "https://registry.yarnpkg.com/lodash.groupby/-/lodash.groupby-4.6.0.tgz#0b08a1dcf68397c397855c3239783832df7403d1"
+
 lodash.isarguments@^3.0.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/lodash.isarguments/-/lodash.isarguments-3.1.0.tgz#2f573d85c6a24289ff00663b491c1d338ff3458a"
@@ -1786,6 +1805,10 @@ p-locate@^2.0.0:
   resolved "https://registry.yarnpkg.com/p-locate/-/p-locate-2.0.0.tgz#20a0103b222a70c8fd39cc2e580680f3dde5ec43"
   dependencies:
     p-limit "^1.1.0"
+
+p-queue@^1.0.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/p-queue/-/p-queue-1.2.0.tgz#639cb8b07270c15b71d7a6446a8e30414f3c96d1"
 
 parse-filepath@^1.0.1:
   version "1.0.1"
