@@ -1,5 +1,6 @@
 const gulp = require('gulp')
 const fs = require('fs')
+const path = require('path')
 const options = require('gulp-options')
 const createHttpCodes = require('../utils/create-http-codes')
 
@@ -28,6 +29,6 @@ gulp.task('create-http-codes', (done) => {
   if (options.has('prod')) {
     env = 'prod'
   }
-  fs.writeFileSync('../../src/http-codes.js', createHttpCodes(env), 'utf8')
+  fs.writeFileSync(path.resolve(__dirname, '../../src/http-codes.js'), createHttpCodes(env), 'utf8')
   done()
 })

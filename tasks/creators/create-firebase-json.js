@@ -1,11 +1,11 @@
 const gulp = require('gulp')
 const fs = require('fs')
-const createFirebaseJson = require('../../templates/build-utils/utils/create-firebase-json')
+const createFirebaseJson = require('../../templates/gulp/utils/create-firebase-json')
 
 /**
  * # Slush Task Create Firebase JSON
  *
- * Creates/Overwrites the Firebase JSON file for hosting purposes. Uses the `build-utils/utils/create-firebase-json.js`
+ * Creates/Overwrites the Firebase JSON file for hosting purposes. Uses the `gulp/utils/create-firebase-json.js`
  * module that is also being used for automatically generating the firebase.json file on the project when running
  * the project's watcher.
  *

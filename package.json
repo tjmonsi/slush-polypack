@@ -113,6 +113,14 @@
     "doctrine": "2.0.0",
     "acorn": "5.1.1",
     "string-width": "2.1.1",
-    "is-fullwidth-code-point": "2.0.0"
+    "is-fullwidth-code-point": "2.0.0",
+    "vinyl-fs": "2.4.4",
+    "is-glob": "3.1.0",
+    "is-extglob": "2.1.1",
+    "glob-parent": "3.1.0",
+    "end-of-stream": "1.4.0",
+    "glob-stream": "5.3.5",
+    "ordered-read-streams": "0.3.0",
+    "unique-stream": "2.2.1"
   }
 }

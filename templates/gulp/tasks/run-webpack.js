@@ -1,6 +1,7 @@
 const gulp = require('gulp')
 const options = require('gulp-options')
-const webpack = require('webpack-stream')
+const webpack = require('webpack')
+const webpackStream = require('webpack-stream')
 const path = require('path')
 const getDest = require('../utils/get-dest')
 const getConfig = require('../utils/get-config')
@@ -25,7 +26,8 @@ gulp.task('run-webpack', (done) => {
     env = 'prod'
   }
   const { config } = getConfig(env)
-  const dest = getDest(env)
+  const dest = path.resolve(__dirname, '../../' + getDest(env))
+  
   const watch = options.has('watch')
 
   const serviceWorker = env === 'prod'
@@ -76,35 +78,35 @@ gulp.task('run-webpack', (done) => {
     }),
     new CopyWebpackPlugin([
       {
-        from: path.resolve(__dirname, 'bower_components/webcomponentsjs/*.js'),
+        from: path.resolve(__dirname, '../../bower_components/webcomponentsjs/*.js'),
         to: 'bower_components/webcomponentsjs/[name].[ext]'
       },
       {
-        from: path.resolve(__dirname, 'bower_components/webcomponentsjs/*.map'),
+        from: path.resolve(__dirname, '../../bower_components/webcomponentsjs/*.map'),
         to: 'bower_components/webcomponentsjs/[name].[ext]'
       },
       {
-        from: path.resolve(__dirname, 'bower_components/web-component-tester/*.js'),
+        from: path.resolve(__dirname, '../../bower_components/web-component-tester/*.js'),
         to: 'bower_components/web-component-tester/[name].[ext]'
       },
       {
-        from: path.resolve(__dirname, 'src/images'),
+        from: path.resolve(__dirname, '../../src/images'),
         to: 'images'
       },
       {
-        from: path.resolve(__dirname, 'src/service-worker'),
+        from: path.resolve(__dirname, '../../src/service-worker'),
         to: 'service-worker-src'
       },
       {
-        from: path.resolve(__dirname, 'core/service-worker'),
+        from: path.resolve(__dirname, '../../core/service-worker'),
         to: 'service-worker-core'
       },
       {
-        from: path.resolve(__dirname, `node_modules/workbox-routing/build/importScripts/workbox-routing.${env === 'prod' ? env : 'dev'}.*.js`),
+        from: path.resolve(__dirname, `../../node_modules/workbox-routing/build/importScripts/workbox-routing.${env === 'prod' ? env : 'dev'}.*.js`),
         to: 'workbox-routing.js'
       },
       {
-        from: path.resolve(__dirname, `src/config/${env}.json`),
+        from: path.resolve(__dirname, `../../src/config/${env}.json`),
         to: '../../src/.temp/temp.json'
       }
     ]),
@@ -202,17 +204,18 @@ gulp.task('run-webpack', (done) => {
     }
   }
 
-  return gulp.src('./core/shell/index.js')
-    .pipe(webpack({
+  return gulp.src(path.resolve(__dirname, '../../core/shell/index.js'))
+    .pipe(webpackStream({
       watch,
       output: {
         filename: '[name].bundle.js',
-        path: path.resolve(__dirname, dest)
+        path: dest
       },
       resolve: {
         modules: [
-          path.resolve(__dirname, 'node_modules'),
-          path.resolve(__dirname, 'bower_components')
+          path.resolve(__dirname, '../../node_modules'),
+          path.resolve(__dirname, '../node_modules'),
+          path.resolve(__dirname, '../../bower_components')
         ]
       },
       plugins,
@@ -280,4 +283,6 @@ gulp.task('run-webpack', (done) => {
       }
     }))
     .pipe(gulp.dest(dest))
+    
+  
 })

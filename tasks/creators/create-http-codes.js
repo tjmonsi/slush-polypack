@@ -1,6 +1,6 @@
 const gulp = require('gulp')
 const fs = require('fs')
-const createHttpCodes = require('../../templates/build-utils/utils/create-http-codes')
+const createHttpCodes = require('../../templates/gulp/utils/create-http-codes')
 
 /**
  * # Slush Task Create HTTP Codes File

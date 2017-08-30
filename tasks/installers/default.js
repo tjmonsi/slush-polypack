@@ -36,6 +36,7 @@ gulp.task('default', (done) => {
     'create-firebaserc',
     'create-gitignore',
     'create-polypackrc',
+    'create-yarn',
     'create-routing',
     'create-partials',
     'create-http-codes',

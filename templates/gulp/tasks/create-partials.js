@@ -1,5 +1,6 @@
 const gulp = require('gulp')
 const fs = require('fs')
+const path = require('path')
 const options = require('gulp-options')
 const createPartials = require('../utils/create-partials')
 
@@ -28,6 +29,6 @@ gulp.task('create-partials', (done) => {
   if (options.has('prod')) {
     env = 'prod'
   }
-  fs.writeFileSync('../../src/partials.js', createPartials(env), 'utf8')
+  fs.writeFileSync(path.resolve(__dirname, '../../src/partials.js'), createPartials(env), 'utf8')
   done()
 })

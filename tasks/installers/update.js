@@ -5,11 +5,11 @@ const runSequence = require('run-sequence')
  * # Slush Task Update
  *
  * Update Core and Source files. Copies the core files to `core/` and source files (developer project sample files) to `src/`.
- * It also copies files for gulp and webpack to run to `build-utils/` folder
+ * It also copies files for gulp and webpack to run to `gulp/` folder
  * Runs the following tasks:
  * - [update-core](../updates/update-core.md)
  * - [update-src](../updates/update-src.md)
- * - [update-build-utils](../updates/update-build-utils.md)
+ * - [update-gulp](../updates/update-gulp.md)
  *
  * ## Usage
  *
@@ -25,7 +25,8 @@ gulp.task('update', (done) => {
   return runSequence(
     'update-core',
     'update-src',
-    'update-build-utils',
+    'update-gulp',
+    'update-images',
     'update-functions',
     done
   )

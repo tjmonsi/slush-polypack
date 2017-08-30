@@ -1,5 +1,6 @@
 const gulp = require('gulp')
 const fs = require('fs')
+const path = require('path')
 const options = require('gulp-options')
 const createRouting = require('../utils/create-routing')
 
@@ -28,6 +29,6 @@ gulp.task('create-routing', (done) => {
   if (options.has('prod')) {
     env = 'prod'
   }
-  fs.writeFileSync('../../src/routing.js', createRouting(env), 'utf8')
+  fs.writeFileSync(path.resolve(__dirname, '../../src/routing.js'), createRouting(env), 'utf8')
   done()
 })

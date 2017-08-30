@@ -16,12 +16,9 @@ const install = require('gulp-install')
  * [/tasks/installers/install-bower.js](../../../tasks/installers/install-bower.js)
  *
  */
-gulp.task('install', (done) => {
+gulp.task('install-bower', (done) => {
   const installers = ['./bower.json']
 
-  gulp.src(installers)
+  return gulp.src(installers)
   .pipe(install())
-  .on('end', function () {
-    done()
-  })
 })

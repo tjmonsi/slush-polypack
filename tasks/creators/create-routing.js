@@ -1,6 +1,6 @@
 const gulp = require('gulp')
 const fs = require('fs')
-const createRouting = require('../../templates/build-utils/utils/create-routing')
+const createRouting = require('../../templates/gulp/utils/create-routing')
 
 /**
  * # Slush Task Create Routing File

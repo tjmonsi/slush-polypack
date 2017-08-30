@@ -23,6 +23,8 @@ gulp.task('install', (done) => {
   return runSequence(
     'install-bower',
     'install-npm',
+    'install-gulp',
+    'install-functions',
     done
   )
 })

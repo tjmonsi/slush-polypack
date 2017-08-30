@@ -1,6 +1,6 @@
 const gulp = require('gulp')
 const fs = require('fs')
-const createPartials = require('../../templates/build-utils/utils/create-partials')
+const createPartials = require('../../templates/gulp/utils/create-partials')
 
 /**
  * # Slush Task Create Partials File

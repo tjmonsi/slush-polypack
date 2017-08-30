@@ -4,6 +4,7 @@ const template = require('gulp-template')
 const rename = require('gulp-rename')
 
 module.exports = (src, data, dest, done) => {
+  console.log(data)
   src.pipe(template(data))
   .pipe(rename(function (file) {
     if (file.basename[0] === '_') {
