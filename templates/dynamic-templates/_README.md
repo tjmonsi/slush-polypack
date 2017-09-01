@@ -24,26 +24,30 @@ And you're done. Next...
 
 ### Running the Application
 
-To run the app. Open two terminals. On the first terminal...
+To run the app.
 
 ```bash
 $  npm start
 ```
 
-...to start the webpack builder.
+Be sure to have the right credentials and you own the firebase project or it will return some errors.
 
-And on the second terminal...
+If you want to run using your own http server, just run...
 
 ```bash
-$ npm run serve
+$ npm start -- --no-server
 ```
 
-...to run your server.
-
-If you wish to run only firebase hosting, just type...
+If you want to build the project without watching...
 
 ```bash
-$ npm run serve-hosting
+$ npm run build
+```
+
+If you want to build the project for production...
+
+```bash
+$ npm run build-production
 ```
 
 ## Contributing
