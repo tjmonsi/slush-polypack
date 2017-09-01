@@ -147,8 +147,7 @@ class AppShell extends QueryParamsMixin(LocationMixin(Polymer.Element)) {
     this._observer = new Polymer.FlattenedNodesObserver(this, (info) => {
       this._contentAdded(info.addedNodes.filter((node) => (node.nodeType === window.Node.ELEMENT_NODE)))
     })
-    // registerServiceWorker(this)
-    System.import('../modules/app-toast/components/app-toast.html').then(() => {
+    import(/* webpackChunkName: "app-toast" */ '../modules/app-toast/components/app-toast.html').then(() => {
       var messageInterval = setInterval(() => {
         if (messages.length > 0) {
           var {message, optTapHandler, optAction, optActionHandler, optDuration} = messages.pop()
@@ -214,6 +213,7 @@ class AppShell extends QueryParamsMixin(LocationMixin(Polymer.Element)) {
           params[keys[j].name] = exec[j + 1]
         }
         routeName = route[0]
+        this.params = params
       }
     })
 
@@ -251,7 +251,11 @@ class AppShell extends QueryParamsMixin(LocationMixin(Polymer.Element)) {
       if (this._routes[i] && this._routes[i].element) this._routes[i].element.classList.remove('page--on-view')
     }
 
-    if (this._routes[route] && this._routes[route].element) this._routes[route].element.classList.add('page--on-view')
+    if (this._routes[route] && this._routes[route].element) {
+      this._routes[route].element.classList.add('page--on-view')
+      this._routes[route].element._setProperty('params', this.params)
+      this._routes[route].element._setProperty('queryParams', this.paramsObject)
+    }
     if (this._routes[route]) {
       routes[route]().then(() => {
         if (window.ga) {

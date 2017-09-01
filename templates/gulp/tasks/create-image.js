@@ -6,7 +6,7 @@ const getEnv = require('../utils/get-env')
 
 gulp.task('create-image', () => {
   const dest = path.resolve(__dirname, '../../' + getDest(getEnv()))
-  return gulp.src(path.resolve(__dirname, '../../src/images/*'))
+  return gulp.src([path.resolve(__dirname, '../../src/images/*'), path.resolve(__dirname, '../../src/images/**/*')])
     .pipe(imagemin([
       imagemin.gifsicle({
         optimizationLevel: 2
