@@ -150,6 +150,7 @@ gulp.task('run-webpack', (done) => {
       watch,
       output: {
         filename: '[name].bundle.js',
+        chunkFilename: '[name].bundle.js',
         path: dest
       },
       resolve: {
