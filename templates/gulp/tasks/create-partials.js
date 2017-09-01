@@ -1,8 +1,8 @@
 const gulp = require('gulp')
 const fs = require('fs')
 const path = require('path')
-const options = require('gulp-options')
 const createPartials = require('../utils/create-partials')
+const getEnv = require('../utils/get-env')
 
 /**
  * # Slush Task Create Partials File
@@ -21,14 +21,6 @@ const createPartials = require('../utils/create-partials')
  */
 
 gulp.task('create-partials', (done) => {
-  var env = 'dev'
-  if (options.has('env')) {
-    env = options.get('env')
-  }
-
-  if (options.has('prod')) {
-    env = 'prod'
-  }
-  fs.writeFileSync(path.resolve(__dirname, '../../src/partials.js'), createPartials(env), 'utf8')
+  fs.writeFileSync(path.resolve(__dirname, '../../src/partials.js'), createPartials(getEnv()), 'utf8')
   done()
 })

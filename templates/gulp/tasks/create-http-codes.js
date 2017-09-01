@@ -1,8 +1,8 @@
 const gulp = require('gulp')
 const fs = require('fs')
 const path = require('path')
-const options = require('gulp-options')
 const createHttpCodes = require('../utils/create-http-codes')
+const getEnv = require('../utils/get-env')
 
 /**
  * # Slush Task Create HTTP Codes File
@@ -21,14 +21,6 @@ const createHttpCodes = require('../utils/create-http-codes')
  */
 
 gulp.task('create-http-codes', (done) => {
-  var env = 'dev'
-  if (options.has('env')) {
-    env = options.get('env')
-  }
-
-  if (options.has('prod')) {
-    env = 'prod'
-  }
-  fs.writeFileSync(path.resolve(__dirname, '../../src/http-codes.js'), createHttpCodes(env), 'utf8')
+  fs.writeFileSync(path.resolve(__dirname, '../../src/http-codes.js'), createHttpCodes(getEnv()), 'utf8')
   done()
 })

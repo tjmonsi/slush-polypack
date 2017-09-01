@@ -1,8 +1,8 @@
 const gulp = require('gulp')
 const fs = require('fs')
 const path = require('path')
-const options = require('gulp-options')
 const createRouting = require('../utils/create-routing')
+const getEnv = require('../utils/get-env')
 
 /**
  * # Slush Task Create Routing File
@@ -21,14 +21,6 @@ const createRouting = require('../utils/create-routing')
  */
 
 gulp.task('create-routing', (done) => {
-  var env = 'dev'
-  if (options.has('env')) {
-    env = options.get('env')
-  }
-
-  if (options.has('prod')) {
-    env = 'prod'
-  }
-  fs.writeFileSync(path.resolve(__dirname, '../../src/routing.js'), createRouting(env), 'utf8')
+  fs.writeFileSync(path.resolve(__dirname, '../../src/routing.js'), createRouting(getEnv()), 'utf8')
   done()
 })

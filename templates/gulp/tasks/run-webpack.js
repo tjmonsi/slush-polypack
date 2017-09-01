@@ -4,31 +4,23 @@ const webpack = require('webpack')
 const webpackStream = require('webpack-stream')
 const path = require('path')
 const getDest = require('../utils/get-dest')
-const getConfig = require('../utils/get-config')
 const createServiceWorker = require('../utils/create-service-worker')
+const getEnv = require('../utils/get-env')
 
 const HTMLWebpackPlugin = require('html-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const Visualizer = require('webpack-visualizer-plugin')
-const WorkboxBuildWebpackPlugin = require('workbox-webpack-plugin')
 const ModernizrWebpackPlugin = require('modernizr-webpack-plugin')
 const GenerateAssetPlugin = require('../utils/generate-asset-plugin')
 const createHTMLOptions = require('../utils/create-html-options')
 const createManifest = require('../utils/create-manifest')
 
 gulp.task('run-webpack', (done) => {
-  var env = 'dev'
-  if (options.has('env')) {
-    env = options.get('env') || 'dev'
-  }
-  if (options.has('prod')) {
-    env = 'prod'
-  }
-  const { config } = getConfig(env)
+  const env = getEnv()
+  // const { config } = getConfig(env)
   const dest = path.resolve(__dirname, '../../' + getDest(env))
-  
-  const watch = options.has('watch')
+  const watch = options.has('watch') && env !== 'prod'
 
   const serviceWorker = env === 'prod'
     ? new GenerateAssetPlugin({
@@ -90,10 +82,6 @@ gulp.task('run-webpack', (done) => {
         to: 'bower_components/web-component-tester/[name].[ext]'
       },
       {
-        from: path.resolve(__dirname, '../../src/images'),
-        to: 'images'
-      },
-      {
         from: path.resolve(__dirname, '../../src/service-worker'),
         to: 'service-worker-src'
       },
@@ -143,65 +131,18 @@ gulp.task('run-webpack', (done) => {
         },
         comments: false,
         sourceMap: true
-      }),
-
-      new WorkboxBuildWebpackPlugin({
-        cacheId: config.app.shortTitle,
-        swDest: `${dest}/sw.js`,
-        globPatterns: ['**/*.{js,css,html}', 'images/**.{png,jpg,ico,gif}', 'images/**/*.{png,jpg,ico,gif}', '**/*.json'].concat(config.serviceWorker.globPatterns),
-        globDirectory: dest,
-        navigateFallback: '/index.html',
-        navigateFallbackWhitelist: [
-          [/^(?!(\/__)|(\/service-worker\.js)|(\/sw\.js)|(\/routing-sw\.js)|(\/_bundle-sizes\.html)|(\/_statistic\.html)|(\/_statistic\.json))/]
-        ].concat(config.serviceWorker.navigateFallbackWhitelist),
-        globIgnores: [
-          '404.html',
-          'service-worker.js',
-          'sw.js',
-          'service-worker-core/routing.js',
-          'service-worker-src/routing.js',
-          'workbox-sw.prod.v2.0.0.js',
-          'workbox-sw.prod.v2.0.0.js.map',
-          'workbox-routing.js'
-        ].concat(config.serviceWorker.globIgnores),
-        skipWaiting: true,
-        handleFetch: env === 'prod',
-        runtimeCaching: [
-          {
-            urlPattern: /^https:\/\/maps.googleapis.com\/.*/,
-            handler: 'networkFirst'
-          },
-          {
-            urlPattern: /^https:\/\/fonts.googleapis.com\/.*/,
-            handler: 'cacheFirst'
-          },
-          {
-            urlPattern: /^https:\/\/fonts.gstatic.com\/.*/,
-            handler: 'cacheFirst'
-          },
-          {
-            urlPattern: /^https:\/\/cdn.ravenjs.com\/.*/,
-            handler: 'cacheFirst'
-          },
-          {
-            urlPattern: /^https:\/\/www.gstatic.com\/firebasejs\/.*/,
-            handler: 'cacheFirst'
-          },
-          {
-            urlPattern: /^https:\/\/www.google-analytics.com\/analytics.js/,
-            handler: 'networkFirst'
-          },
-          {
-            urlPattern: /^https:\/\/polyfill.io\/.*/,
-            handler: 'networkFirst'
-          }
-        ].concat(config.serviceWorker.runtimeCaching)
       })
+
+      // new WorkboxBuildWebpackPlugin()
     ]
 
     for (var i in prod) {
       plugins.push(prod[i])
     }
+  }
+
+  if (watch) {
+    done()
   }
 
   return gulp.src(path.resolve(__dirname, '../../core/shell/index.js'))
@@ -256,7 +197,30 @@ gulp.task('run-webpack', (done) => {
                 }
               },
               {
-                loader: 'image-webpack-loader'
+                loader: 'image-webpack-loader',
+                options: {
+                  gifsicle: {
+                    optimizationLevel: 2
+                  },
+                  optipng: {
+                    optimizationLevel: 5
+                  },
+                  mozjpeg: {
+                    quality: 70,
+                    progressive: true
+                  },
+                  svgo: {
+                    plugins: [
+                      {removeViewBox: true},
+                      {cleanupIDs: false}
+                    ]
+                  },
+                  webp: {
+                    quality: 70,
+                    method: 5,
+                    size: 60000
+                  }
+                }
               }
             ]
           },
@@ -283,6 +247,4 @@ gulp.task('run-webpack', (done) => {
       }
     }))
     .pipe(gulp.dest(dest))
-    
-  
 })

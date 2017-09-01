@@ -26,6 +26,9 @@ const runSequence = require('run-sequence')
  */
 gulp.task('default', (done) => {
   return runSequence(
+    'delete-destination',
+    'create-destination',
+    'create-image',
     'create-routing',
     'create-partials',
     'create-http-codes',
@@ -33,6 +36,7 @@ gulp.task('default', (done) => {
     'watch-build',
     'run-webpack',
     'run-server',
+    'run-workbox',
     done
   )
 })

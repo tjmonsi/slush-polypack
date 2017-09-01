@@ -7,5 +7,9 @@ module.exports = (env) => {
     dest = 'build'
   }
 
+  if (dest === 'dev') {
+    dest = 'public'
+  }
+
   return './dist/' + dest
 }
