@@ -97,7 +97,7 @@ project:
    # Navigate to the newly cloned directory
    cd <%= appRepo.split('/')[1] %>
    # Assign the original repo to a remote called "upstream"
-   git remote add upstream https://github.com/tjmonsi/<%= appRepo.split('/')[1] %>
+   git remote add upstream https://github.com/<%= appRepo %>
    ```
 
 2. If you cloned a while ago, get the latest changes from upstream:
