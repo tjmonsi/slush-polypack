@@ -22,7 +22,7 @@ $ mkdir my-slush-polypack
 Run the generator from within the new folder:
 
 ```bash
-$ cd my-slush-polypack && slush slush-polypack
+$ cd my-slush-polypack && slush polypack
 ```
 
 ## Documentation
