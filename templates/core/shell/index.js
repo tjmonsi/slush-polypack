@@ -1,4 +1,4 @@
-import 'polymer/polymer-element.html'
+import 'polymer/polymer.html'
 import 'polymer/lib/utils/flattened-nodes-observer.html'
 import LocationMixin from '../mixins/location-mixin.js'
 import QueryParamsMixin from '../mixins/query-params-mixin.js'
@@ -9,6 +9,7 @@ import partials from '../../src/partials.js'
 import auth from '../../src/authentication/index.js'
 
 const messages = []
+
 class AppShell extends QueryParamsMixin(LocationMixin(Polymer.Element)) {
   static get is () { return 'app-shell' }
 
@@ -253,11 +254,24 @@ class AppShell extends QueryParamsMixin(LocationMixin(Polymer.Element)) {
 
     if (this._routes[route] && this._routes[route].element) {
       this._routes[route].element.classList.add('page--on-view')
-      this._routes[route].element._setProperty('params', this.params)
-      this._routes[route].element._setProperty('queryParams', this.paramsObject)
     }
     if (this._routes[route]) {
       routes[route]().then(() => {
+        this._routes[route].element._setProperty('params', this.params)
+        this._routes[route].element._setProperty('queryParams', this.paramsObject)
+        if (this._routes[route].element.reload) {
+          this._routes[route].element.reload()
+        }
+
+        if (document.querySelector('.header') && document.querySelector('.header').reload) {
+          document.querySelector('.header').reload()
+        }
+
+        if (document.querySelector('.drawer') && document.querySelector('.drawer').reload) {
+          document.querySelector('.drawer').reload()
+        }
+
+        window.scrollTo(0, 0)
         if (window.ga) {
           ga('set', 'page', this.path)
           ga('send', 'pageview')

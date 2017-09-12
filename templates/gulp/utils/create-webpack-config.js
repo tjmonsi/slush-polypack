@@ -14,7 +14,7 @@ const GenerateAssetPlugin = require('../utils/generate-asset-plugin')
 const createHTMLOptions = require('../utils/create-html-options')
 const createManifest = require('../utils/create-manifest')
 
-module.exports = () => {
+module.exports = (test) => {
   const env = getEnv()
   // const { config } = getConfig(env)
   const dest = path.resolve(__dirname, '../../' + getDest(env))
@@ -50,6 +50,10 @@ module.exports = () => {
       children: true
     }),
     new CopyWebpackPlugin([
+      {
+        from: path.resolve(__dirname, '../../node_modules/intersection-observer/*.js'),
+        to: 'bower_components/intersection-observer/[name].[ext]'
+      },
       {
         from: path.resolve(__dirname, '../../bower_components/webcomponentsjs/*.js'),
         to: 'bower_components/webcomponentsjs/[name].[ext]'
@@ -148,9 +152,12 @@ module.exports = () => {
     })
   ]
 
-  for (var j in lastPlugins) {
-    plugins.push(lastPlugins[j])
+  if (!test) {
+    for (var j in lastPlugins) {
+      plugins.push(lastPlugins[j])
+    }
   }
+
 
   return {
     watch,

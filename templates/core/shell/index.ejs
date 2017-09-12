@@ -56,13 +56,25 @@
     <meta name="msapplication-TileColor" content="<%= htmlWebpackPlugin.options.theme.webApp.themeColor %>">
     <meta name="msapplication-tap-highlight" content="<%= htmlWebpackPlugin.options.theme.webApp.tapHighlight %>">
 
-    <script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver,fetch,Promise,Array.prototype.findIndex,Object.defineProperty,Map,Set,CustomEvent,performance.now,Object.entries,WeakMap,WeakSet&flags=gated"></script>
+    <script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver,fetch,Promise,Array.prototype.findIndex,Object.defineProperty,Map,Set,CustomEvent,performance.now,Object.entries,WeakMap,WeakSet,Object.setPrototypeOf&flags=gated"></script>
     <script>
       Object.defineProperty(window, 'App', { value: window.App || {} })
       Object.defineProperty(App, '_build', { value: App._build || '<%= htmlWebpackPlugin.options.config.build.name %>' })
       Object.defineProperty(App, '_version', { value: App._version || '<%= htmlWebpackPlugin.options.config.build.appVersion %>' })
       Object.defineProperty(App, '_database', { value: App._database || '<%= htmlWebpackPlugin.options.config.build.database %>' })
       Object.defineProperty(App, '_analytics', { value: App._analytics || '<%= htmlWebpackPlugin.options.config.build.analytics %>' })
+
+      if (!Object.entries) {
+        Object.entries = function (obj) {
+          var ownProps = Object.keys(obj)
+          var i = ownProps.length
+          var resArray = new Array(i) // preallocate the Array
+          while (i--) {
+            resArray[i] = [ownProps[i], obj[ownProps[i]]]
+          }
+          return resArray;
+        }
+      }
 
       if (window.performance) {
         window.globalStart = window.globalStart || performance.now()
@@ -76,9 +88,9 @@
               exFatal: true
             })
           }
-          if (window.Raven) {
-            Raven.captureException(err)
-          }
+          // if (window.Raven) {
+          //   Raven.captureException(err)
+          // }
         } catch (e) {
           console.error(err)
           console.error(e)
@@ -89,8 +101,17 @@
       window.App.baseUrl = window.App.baseUrl || document.querySelector('base').href
     </script>
 
+    <script>
+      if (!window.IntersectionObserver) {
+        var script = document.createElement('script')
+        script.src = 'bower_components/intersection-observer/intersection-observer.js'
+        var refScript = document.getElementsByTagName('script')[0]
+        refScript.parentNode.insertBefore(script, refScript)
+      }
+    </script>
+
     <% if (htmlWebpackPlugin.options.config.build.sentryUrl) {%>
-    <script src="https://cdn.ravenjs.com/3.17.0/raven.min.js" crossorigin="anonymous" async onload="installRaven()"></script>
+
 
     <script>
       function installRaven() {
@@ -98,7 +119,8 @@
           Raven.config('<%= htmlWebpackPlugin.options.config.build.sentryUrl %>', {
             environment: App && App._build === 'prod' ? 'production' : App._build,
             autoBreadcrumbs: App && App._build === 'prod',
-            debug: App && App._build !== 'prod'
+            debug: App && App._build !== 'prod',
+            release: App && App._version ? App._version : '0.0.1-zero-build'
           }).install()
           if (App._build !== 'prod') {
             console.log('Raven installed')
@@ -107,6 +129,8 @@
         }
       }
     </script>
+
+    <script src="https://cdn.ravenjs.com/3.17.0/raven.min.js" crossorigin="anonymous" async onload="installRaven()"></script>
     <% } %>
 
     <!-- Load your application shell -->
@@ -115,6 +139,7 @@
     <style>
       body {
         margin: 0;
+        background: #333;
       }
 
       .drawer {
@@ -141,7 +166,7 @@
         ga('create', App._analytics, 'auto');
         ga('send', 'pageview');
 
-        setTimeout(() => {
+        setTimeout(function () {
           ga('send', 'event', 'App', 'read', 'User at app at least 15 seconds', 15)
           // ga('event')
         }, 15000)
@@ -195,8 +220,10 @@
                       App.Shell.showMessage('Caching complete! Future visits will work offline.', function() { App.Shell.closeToast() }, 'Close', null, 10000)
                     } else {
                       setTimeout(function () {
-                        App.Shell.showMessage('Caching complete! Future visits will work offline.', function() { App.Shell.closeToast() }, 'Close', null, 10000)
-                      }, 30000)
+                        if (App.Shell && App.Shell.showMessage && typeof App.Shell.showMessage === 'function') {
+                          App.Shell.showMessage('Caching complete! Future visits will work offline.', function() { App.Shell.closeToast() }, 'Close', null, 10000)
+                        }
+                      }, 60000)
                     }
 
                   }
